@@ -29,6 +29,7 @@ namespace WinRegistry
                 Debug.WriteLine("Failed To Open Sub Key!!!");
             }
             newKey.SetValue(newValue, value, RegistryValueKind.QWord);
+            newKey.Close();
         }
         public void WriteStrValue(RegistryHive hive, string subkey, string newValue, object value)
         {
@@ -40,6 +41,7 @@ namespace WinRegistry
                 Debug.WriteLine("Failed To Open Sub Key!!!");
             }
             newKey.SetValue(newValue, value, RegistryValueKind.String);
+            newKey.Close();
         }
         public void WriteBinaryValue(RegistryHive hive, string subkey, string newValue, byte[] value)
         {
@@ -51,6 +53,7 @@ namespace WinRegistry
                 Debug.WriteLine("Failed To Open Sub Key!!!");
             }
             newKey.SetValue(newValue, value, RegistryValueKind.Binary);
+            newKey.Close();
         }
     }
 }
